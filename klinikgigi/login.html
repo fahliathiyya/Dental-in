@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>Login Klinik Gigi</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,14 +19,14 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="index2.html" class="h1"><b>Klinik Gigi</a>
+      <a href="" class="h1"><b>Klinik Gigi</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Silahkan Login</p>
 
-      <form action="index.html" method="post">
+      <form id="form" onsubmit="kirim()">
         <div class="input-group mb-3">
-          <input type="Username" class="form-control" placeholder="Username">
+          <input type="Username" id="username" class="form-control" placeholder="Username" autocomplete="off">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="off">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -48,7 +48,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block"> Login</button>
           </div>
           <!-- /.col -->
         </div>
@@ -71,5 +71,21 @@
 <script src="   plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="   dist/js/adminlte.min.js"></script>
+
+
+<script>
+  function kirim() {
+    let inp_username = document.getElementById("username").value;
+    let inp_pass = document.getElementById("password").value;
+    let form = document.getElementById("form");
+
+    if (inp_username == "admin" && inp_pass == "admin123") {
+        form.setAttribute("action", "index.html");
+        alert("Login Berhasil")
+    } else {
+        alert("Login Gagal")
+    }
+}
+</script>
 </body>
 </html>
